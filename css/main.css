@@ -1,0 +1,22 @@
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir-Regular-FD.eot');
+    src: url('../fonts/Vazir-Regular-FD.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Vazir-Regular-FD.woff2') format('woff2'),
+         url('../fonts/Vazir-Regular-FD.woff') format('woff'),
+         url('../fonts/Vazir-Regular-FD.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body, button{
+    font-family: Vazir;
+}
+
+.logo{
+    width: 100px;
+    object-fit: contain;
+}
+
+.rating{
+    color: gold;
+}

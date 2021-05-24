@@ -1,0 +1,25 @@
+{
+  "name": "rater",
+  "main": "rater.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/auxiliary/rater",
+  "description": "A highly customizable rating widget that supports images, utf8 glyphs and other html elements",
+  "keywords": [
+    "rating",
+    "star",
+    "jquery",
+    "utf8",
+    "widget"
+  ],
+  "authors": [
+    "Mohammad A.Raji"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
