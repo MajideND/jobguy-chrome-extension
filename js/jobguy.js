@@ -1,5 +1,35 @@
 var profile_url = null;
 
+function jobguy_interviews(slug) {
+  $.get(
+    "https://api.jobguy.work/public/company/" +
+      slug +
+      "/interview/?size=18&index=0",
+    function(data) {
+      var data = data.data;
+      data.forEach(element => {
+        $(".interviews").append(
+          `<div class="box">
+            <b>` +
+            element.title +
+            `</b><br><div class="rating" data-rate-value=` +
+            element.total_rate +
+            `></div>` +
+            element.description +
+            `
+        </div>`
+        );
+      });
+      var options = {
+        max_value: 5,
+        selected_symbol_type: "fontawesome_star",
+        readonly: true
+      };
+      $(".rating").rate(options);
+    }
+  );
+}
+
 function jobguy_reviews(slug) {
   $.get(
     "https://api.jobguy.work/public/company/" +
@@ -10,15 +40,14 @@ function jobguy_reviews(slug) {
       data.forEach(element => {
         $(".reviews").append(
           `<div class="box">
-            <div class="rating" data-rate-value=` +
-            element.over_all_rate +
-            `></div>
-            ` +
+              <b>` +
             element.title +
-            `<br>` +
+            `</b><br><div class="rating" data-rate-value=` +
+            element.over_all_rate +
+            `></div>` +
             element.description +
             `
-        </div>`
+          </div>`
         );
       });
       var options = {
@@ -63,16 +92,17 @@ function jobguy_search(name) {
       };
       $(".rating").rate(options);
       jobguy_reviews(company.company_slug);
+      jobguy_interviews(company.company_slug);
     }
   );
 }
 
 function jobguy_request(name) {
+  $(".comment-area").show();
   jobguy_search(name);
 }
 
 $(document).on("click", ".link-to-jobguy", function() {
-
   if (profile_url && profile_url != null) {
     browser.tabs.create({ url: profile_url });
   }

@@ -14,9 +14,7 @@ function getCurrentURL() {
       currentWindow: true
     },
     function(tabs) {
-      var tabURL = tabs;
-      console.log(tabURL);
-      
+      var tabURL = tabs;      
       onGot(tabURL);
     }
   );
@@ -102,6 +100,19 @@ function onGot(data) {
   $(".link-to-jobguy").prop("disabled", true);
 }
 function onError(error) {
-  console.log(error);
 }
 getCurrentURL();
+
+
+$(document).on("click",".show-reviews",function () {
+  $(".reviews").show();
+  $(".interviews").hide();
+  $(".show-reviews").parent().addClass("is-active");
+  $(".show-interviews").parent().removeClass("is-active");
+});
+$(document).on("click",".show-interviews",function () {
+  $(".interviews").show();
+  $(".reviews").hide();
+  $(".show-interviews").parent().addClass("is-active");
+  $(".show-reviews").parent().removeClass("is-active");
+});

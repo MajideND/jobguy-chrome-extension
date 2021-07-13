@@ -1,5 +1,3 @@
-"use strict";
-
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   var response = { status: false };
   if (request == "jobinja_1") {
