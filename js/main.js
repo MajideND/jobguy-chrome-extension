@@ -1,5 +1,3 @@
-"use strict";
-
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   var response = { status: false };
   if (request == "jobinja_1") {
@@ -11,12 +9,21 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   }
 
   if (request == "quera_1") {
-    var company_name = document.querySelectorAll('h1.header')[0];
+    var company_name = document.getElementsByClassName('chakra-link')[0];
     if (company_name) {
       company_name = company_name.innerHTML;
       response = { status: true, company_name: company_name };
     }
   }
+
+  if (request == "quera_2") {
+    var company_name = document.getElementsByClassName('chakra-heading')[0];
+    if (company_name) {
+      company_name = company_name.innerHTML;
+      response = { status: true, company_name: company_name };
+    }
+  }
+
 
   if (request == "jobvision_1") {
     var company_name = document.getElementsByClassName(

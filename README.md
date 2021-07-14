@@ -3,11 +3,12 @@ Jobguy discover is an open-source based on jobguy.work API to receive company in
 
 Supported webpages:
 
-    Jobinja Company page
-    Jobinja Jobs
+    Jobinja.com Company page
+    Jobinja.com Jobs
+    Quera.ir Jobs (New)
+    Quera.ir Company Page
     Jobvision Company page (open full view)
     Jobvision Jobs (open full view)
-    Quera.ir Company Page
 
 
 We have used [jobguywork/backend](https://github.com/jobguywork/backend/) on Github to use API information.

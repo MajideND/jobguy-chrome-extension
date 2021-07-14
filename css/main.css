@@ -20,3 +20,7 @@ body, button{
 .rating{
     color: gold;
 }
+
+.comment-area,.interviews{
+    display: none;
+}
