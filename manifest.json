@@ -1,7 +1,7 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Jobguy Discover",
-    "version": "1.1",
+    "version": "1.1.1",
     "description": "Open source project to show workspace status on jobguy.\nافزونه اوپن سورس برای تشخیص وضعیت شرکت در جاب گای.",
     "icons": {
         "16": "images/logo_16.png",

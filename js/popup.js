@@ -39,6 +39,15 @@ function get_company_name_from_jobvision_1(path_url, url, tab_id) {
   });
 }
 
+function get_company_name_from_quera_2(path_url, url, tab_id) {
+  chrome.tabs.sendMessage(tab_id, "quera_2", function(response) {
+    if (response.status == true) {
+      var company_name = response.company_name.trim();
+      jobguy_request(company_name);
+    }
+  });
+}
+
 function get_company_name_from_quera_1(path_url, url, tab_id) {
   chrome.tabs.sendMessage(tab_id, "quera_1", function(response) {
     if (response.status == true) {
@@ -52,8 +61,11 @@ function getinfo_quera(url, tab_id) {
   $(document).ready(function() {
     $(".link-to-jobguy").prop("disabled", false);
     var path_url = url.replace(/^.*\/\/[^\/]+/, "");
-    if (path_url.startsWith("/careers/company")) {
+    if (path_url.startsWith("/careers/job")) {
       get_company_name_from_quera_1(path_url, url, tab_id);
+    }
+    if (path_url.startsWith("/careers/company")) {
+      get_company_name_from_quera_2(path_url, url, tab_id);
     }
   });
 }
